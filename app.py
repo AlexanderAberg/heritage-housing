@@ -6,7 +6,7 @@ from app_pages.page_summary import page_summary_body
 from app_pages.page_prospect import page_prospect_body
 from app_pages.page_project_hypothesis import page_project_hypothesis_body
 from app_pages.page_house_prices import page_house_prices_body
-from app_pages.page_cluster import page_cluster_body
+from app_pages.page_correlation import page_cluster_body
 
 app = MultiPage(app_name= "HousePrices") # Create an instance of the app 
 
