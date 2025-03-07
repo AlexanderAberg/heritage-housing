@@ -5,7 +5,7 @@ import pickle as px
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-model_path = f"outputs/ml_pipeline/cluster_analysis/v1/cluster_pipeline.pkl"
+model_path = f"outputs/ml_pipeline//predict_price/v1/regression_pipeline.pkl"
 
 def page_cluster_body():
 
@@ -43,34 +43,34 @@ def page_cluster_body():
 # code coped from "07 - Modeling and Evaluation - Cluster Sklearn" notebook - under "Cluster Analysis" section
 def cluster_distribution_per_variable(df, target):
 
-    df_bar_plot = df.groupby(["Clusters", target]).size().reset_index(name="Count")
-    df_bar_plot.columns = ['Clusters', target, 'Count']
+    df_bar_plot = df.groupby(["SalePrice", target]).size().reset_index(name="Count")
+    df_bar_plot.columns = ['SalePrice', target, 'Count']
     df_bar_plot[target] = df_bar_plot[target].astype('object')
 
-    st.write(f"#### Clusters distribution across {target} levels")
-    fig = px.bar(df_bar_plot, x='Clusters', y='Count',
+    st.write(f"#### SalePrice distribution across {target} levels")
+    fig = px.bar(df_bar_plot, x='SalePrice', y='Count',
                  color=target, width=800, height=350)
     fig.update_layout(xaxis=dict(tickmode='array',
-                      tickvals=df['Clusters'].unique()))
+                      tickvals=df['SalePrice'].unique()))
     # we replaced fig.show() for a streamlit command to render the plot
     st.plotly_chart(fig)
 
     df_relative = (df
-                   .groupby(["Clusters", target])
+                   .groupby(["SalePrice", target])
                    .size()
                    .unstack(fill_value=0)
                    .apply(lambda x:  100*x / x.sum(), axis=1)
                    .stack()
                    .reset_index(name='Relative Percentage (%)')
-                   .sort_values(by=['Clusters', target])
+                   .sort_values(by=['SalePrice', target])
                    )
-    df_relative.columns = ['Clusters', target, 'Relative Percentage (%)']
+    df_relative.columns = ['SalePrice', target, 'Relative Percentage (%)']
 
     st.write(f"#### Relative Percentage (%) of {target} in each cluster")
-    fig = px.line(df_relative, x='Clusters', y='Relative Percentage (%)',
+    fig = px.line(df_relative, x='SalePrice', y='Relative Percentage (%)',
                   color=target, width=800, height=350)
     fig.update_layout(xaxis=dict(tickmode='array',
-                      tickvals=df['Clusters'].unique()))
+                      tickvals=df['SalePrice'].unique()))
     fig.update_traces(mode='markers+lines')
     # we replaced fig.show() for a streamlit command to render the plot
     st.plotly_chart(fig)
