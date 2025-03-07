@@ -17,11 +17,15 @@ def page_summary_body():
     
     st.warning("""
                 **Business requirements:**
-                - The client requires analysis and visualization of the dataset.
-                - The client expects a machine learning model with an accuracy above 80%.
-               """)
+                "***Business Requirement 1**: Explore and analyze how various "
+                "house characteristics impact the sale price, with the help of "
+                "visualizations to illustrate these connections.\n"
+                "***Business Requirement 2**: Build a forecasting model to predict "
+                "the sale prices of the inherited properties and other homes in Ames, "
+                "Iowa."
+                """)
     # Link to README file
-    st.markdown("Read the full README [here](https://github.com/)", unsafe_allow_html=True)
+    st.markdown("Read the full README [here](https://github.com/AlexanderAberg/heritage-housing/blob/main/README.md)", unsafe_allow_html=True)
     
     
     
