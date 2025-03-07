@@ -18,7 +18,7 @@ def page_cluster_body():
     st.info(
         f"* We refitted the cluster pipeline using fewer variables, and it delivered equivalent "
         f"performance to the pipeline fitted using all variables.\n"
-        f"* The pipeline average silhouette score is 0.68"
+        f"* The pipeline average silhouette score "
     )
     st.write("---")
 
