@@ -1,11 +1,11 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-import pickle
+import pickle as px
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-model_path = f"outputs/ml_pipeline/HousePrices/v1/clf_pipeline_data_cleaning_feat_eng.pkl"
+model_path = f"outputs/ml_pipeline/predict_price/v1/regression_pipeline.pkl"
 
 
 
@@ -13,13 +13,13 @@ def page_house_prices_body():
 
     # load needed files
     X_train = pd.read_csv(
-        "outputs/ml_pipeline/HousePrices/v1/X_train.csv")
+        "outputs/ml_pipeline/predict_price/v1/X_train.csv")
     X_test = pd.read_csv(
-        "outputs/ml_pipeline/HousePrices/v1/X_test.csv")
+        "outputs/ml_pipeline/predict_price/v1/X_test.csv")
     y_train = pd.read_csv(
-        "outputs/ml_pipeline/HousePrices/v1/y_train.csv").values
+        "outputs/ml_pipeline/predict_price/v1/y_train.csv").values
     y_test = pd.read_csv(
-        "outputs/ml_pipeline/HousePrices/v1/y_test.csv").values
+        "outputs/ml_pipeline/predict_price/v1/y_test.csv").values
 
     st.write("### ML Pipeline: Predict SalePrice")
     # display pipeline training summary conclusions
