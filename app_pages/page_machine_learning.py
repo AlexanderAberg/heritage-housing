@@ -8,7 +8,7 @@ import joblib
 
 model_path = f"outputs/ml_pipeline/predict_price/v1/regression_pipeline.pkl"
 
-def page_prospect_body():
+def page_machine_learning_body():
 
     # load predict SalePrice files
      version = 'v1'

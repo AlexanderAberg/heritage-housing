@@ -7,7 +7,7 @@ import seaborn as sns
 
 model_path = f"outputs/ml_pipeline//predict_price/v1/regression_pipeline.pkl"
 
-def page_cluster_body():
+def page_correlation_body():
 
     
 
