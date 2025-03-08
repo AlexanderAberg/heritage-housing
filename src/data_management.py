@@ -8,7 +8,7 @@ import streamlit as st
 @st.cache_data
 def load_housing_data():
     """
-    Load the housing dataset from a CSV file.
+    Load the cleaned housing dataset from a CSV file.
 
     Returns:
         pd.DataFrame: A DataFrame containing the housing dataset in Ames, Iowa.
