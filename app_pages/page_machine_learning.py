@@ -4,7 +4,7 @@ import joblib
 import os
 import matplotlib.pyplot as plt
 from src.data_management import load_ames_data, load_pkl_file
-from src.machine_learning.evaluate_reg import regression_performance
+from src.machine_learning.evaluate_regression import regression_performance
 
 def load_pkl_file(file_path):
     """
