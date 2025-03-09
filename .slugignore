@@ -4,3 +4,5 @@
 *.pdf
 /test
 /spec
+*.sh
+inputs/datasets/raw/house-price-20211124T154130Z-001/house-price/house_prices_records.csv
