@@ -9,8 +9,10 @@ def page_summary_body():
             """)
     
     st.success("""
-                **Dataset:**
-                The dataset is taken from https://www.kaggle.com/datasets/codeinstitute/housing-prices-data
+            **Dataset:**
+            The dataset is taken from https://www.kaggle.com/datasets/codeinstitute/housing-prices-data
+            The dataset is cleaned and the cleaned dataset is used in the project.
+            See the cleaned version here https://github.com/AlexanderAberg/heritage-housing/blob/main/outputs/datasets/cleaned/HousePricesCleaned.csv
                
                 [Licence](https://github.com/)
                """)
