@@ -1,5 +1,4 @@
 *.ipynb
 *.md
-*.txt
 data/
 tests/
