@@ -1,4 +1,6 @@
 *.ipynb
 *.md
-data/
-tests/
+*.psd
+*.pdf
+/test
+/spec
