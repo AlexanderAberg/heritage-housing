@@ -1,7 +1,12 @@
-*.ipynb
-*.md
-*.psd
-*.pdf
 /test
 /spec
-*.sh
+/docs
+/images
+/inputs/datasets/raw
+/build
+/dist
+/node_modules
+/log
+/tmp
+*.log
+*.tmp
