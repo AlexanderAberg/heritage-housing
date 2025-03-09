@@ -5,3 +5,9 @@
 /test
 /spec
 *.sh
+.git/
+.github/
+.vscode/
+.env
+tests/
+coverage/
