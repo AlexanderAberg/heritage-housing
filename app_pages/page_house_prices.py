@@ -16,208 +16,72 @@ def load_model():
 
 
 def page_house_prices_body():
-    """
-    Streamlit page function for predicting the houses sales price.
-    """
     st.write("## Sales Price Prediction")
-
-    # Load the pre-trained model pipeline for price prediction
+    
+    # Load model once
     regression_pipe = load_model()
-
-    # The title for the page
-    st.write("## House Price Prediction")
-
-    regression_pipe = load_model()
-
+    
     X_inherited = load_inherited_houses_data()
-
-    # List of important features for the house price prediction
-    house_features = ["1stFlrSF",
-                      "BsmtFinSF1", "GarageArea", "GarageYrBlt",
-                      "GrLivArea", "LotArea", "OverallQual",
-                      "TotalBsmtSF", "YearBuilt", "YearRemodAdd"]
-
-
-      # Filter the inherited houses dataset to only include important features
+    house_features = ["1stFlrSF", "BsmtFinSF1", "GarageArea", "GarageYrBlt",
+                     "GrLivArea", "LotArea", "OverallQual",
+                     "TotalBsmtSF", "YearBuilt", "YearRemodAdd"]
+    
     X_inherited_filtered = X_inherited[house_features]
-
-    # Display the dataset with the important features
     st.write("#### Inherited Houses (Filtered Data for Prediction)")
     st.write(X_inherited_filtered)
-
-
-    predicted_prices = predict_price(X_inherited_filtered, house_features,
-                                     regression_pipe)
     
+    predicted_prices = predict_price(X_inherited_filtered, house_features, regression_pipe)
     X_inherited['PredictedSalePrice'] = predicted_prices
-
-
-    # Display the inherited houses data with the predicted sale prices
-    st.write("#### Predicted Sale Prices for the Inherited Houses")
-    st.dataframe([["1stFlrSF",
-                    "BsmtFinSF1", "GarageArea", "GarageYrBlt",
-                    "GrLivArea", "LotArea", "OverallQual",
-                    "TotalBsmtSF", "YearBuilt", "YearRemodAdd"]])
-
-
+    
     total_price = X_inherited['PredictedSalePrice'].sum()
-
-    st.write(f"### Total Predicted Sale Price for the Inherited Houses: "
-             f"**💲{round(total_price, 2):,}**")
-
+    st.write(f"### Total Predicted Sale Price for the Inherited Houses:")
+    st.write(f"**💲{round(total_price, 2):,}**")
+    
     st.write("#### Predict Sales Price for Your Own House")
-
     X_live = DrawInputsWidgets(house_features)
-
-    # Predict the price for the custom user-provided house
-    price_prediction_live = predict_price(X_live, house_features,
-                                          regression_pipe)
-
+    
+    if st.button('Calculate the House Price'):
+        try:
+            predicted_price = predict_price(X_live, house_features, regression_pipe)[0]
+            st.write(f"### Calculated Successfully \\n"
+                    f"### The price for your house:")
+            st.write(f"💲{round(predicted_price, 2):,}")
+        except Exception as e:
+            st.error(f"Error calculating prediction: {str(e)}")
 
 def DrawInputsWidgets(house_features):
-    
-    # Load the housing dataset to help determine the realistic input ranges
     df = load_housing_data()
-
-    # Define range for scaling input values
     percentageMin, percentageMax = 0.3, 2.2
-
-    # Reload the pre-trained regression model for predicting the house price
-    price_pipeline = joblib.load(
-        "outputs/ml_pipeline/predict_price/v1/regression_pipeline.pkl"
-    )
-
-    # Initialize an empty DataFrame to store the custom user's house input
+    
     X_live = pd.DataFrame([], index=[0])
-
-    # Set up 10 columns for the user to input the house features 
-    col1, col2, col3, col4, col5, col6, col7, col8, col9, col10 = st.columns(10)
-
-    # Ensure the relevant features are in the correct order for input
-    relevant_features = ["1stFlrSF",
-                         "BsmtFinSF1", "GarageArea", "GarageYrBlt",
-                         "GrLivArea", "LotArea", "OverallQual",
-                         "TotalBsmtSF", "YearBuilt", "YearRemodAdd"]
-
-    # Create input widgets for each feature one by one, allowing the user to
-    # set their house details
-    with col1:
-        feature = relevant_features[0]
-        st_widget = st.number_input(
-            label=feature,
-             min_value=int(df[feature].min()),
-            max_value=int(df[feature].max()),
-            value=int(df[feature].median()),
-            step=10
-        )
-        X_live[feature] = st_widget
-
-    with col2:
-        feature = relevant_features[1]
-        st_widget = st.number_input(
-            label=feature,
-            min_value=int(df[feature].min()),
-            max_value=int(df[feature].max()),
-            value=int(df[feature].median()),
-            step=10
-        )
-        X_live[feature] = st_widget
-
-    with col3:
-        feature = relevant_features[2]
-        st_widget = st.number_input(
-            label=feature,
-            min_value=int(df[feature].min()),
-            max_value=int(df[feature].max()),
-            value=int(df[feature].median()),
-            step=10
-        )
-        X_live[feature] = st_widget
-
-    with col4:
-        feature = relevant_features[3]
-        st_widget = st.number_input(
-            label=feature,
-            min_value=int(df[feature].min() * percentageMin),
-            max_value=date.today().year,
-            value=int(df[feature].median()),
-            step=1
-        )
-        X_live[feature] = st_widget
-
-    with col5:
-        feature = relevant_features[4]
-        st_widget = st.number_input(
-            label=feature,
-             min_value=int(df[feature].min()),
-            max_value=int(df[feature].max()),
-            value=int(df[feature].median()),
-            step=10
-        )
-        X_live[feature] = st_widget
-
-    with col6:
-        feature = relevant_features[5]
-        st_widget = st.number_input(
-            label=feature,
-            min_value=int(df[feature].min()),
-            max_value=int(df[feature].max()),
-            value=int(df[feature].median()),
-            step=100
-        )
-        X_live[feature] = st_widget
-
-    with col7:
-        feature = relevant_features[6]
-        st_widget = st.number_input(
-            label=feature,
-            min_value=1,
-            max_value=10,
-            value=5,
-            step=1
-        )
-        X_live[feature] = st_widget
-
-    with col8:
-        feature = relevant_features[9]
-        st_widget = st.number_input(
-            label=feature,
-            min_value=int(df[feature].min() * percentageMin),
-            max_value=date.today().year,
-            value=int(df[feature].median()),
-            step=1
-        )
-        X_live[feature] = st_widget
-
-    with col9:
-        feature = relevant_features[8]
-        st_widget = st.number_input(
-            label=feature,
-            min_value=int(df[feature].min() * percentageMin),
-            max_value=date.today().year,
-            value=int(df[feature].median()),
-            step=1
-        )
-        X_live[feature] = st_widget
-
-    with col10:
-        feature = relevant_features[9]
-        st_widget = st.number_input(
-            label=feature,
-            min_value=int(df[feature].min() * percentageMin),
-            max_value=date.today().year,
-            value=int(df[feature].median()),
-            step=1
-        )
-        X_live[feature] = st_widget
-
-    # Button to calculate the predicted price based on inputs and display
-    if st.button('Calculate the House Price'):
-        predicted_price = (X_live, house_features, price_pipeline)
-
-        # Display the predicted house price on the Streamlit page
-        st.write(f"### Calculated Successfully \n"
-                 f"### The price for your house:"
-                 f"💲{round(predicted_price[0], 2):,}")
-
+    cols = st.columns(10)
+    
+    feature_params = {
+        "OverallQual": {"min_val": 1, "max_val": 10, "step": 1},
+        "YearBuilt": {"min_val": int(df["YearBuilt"].min() * percentageMin),
+                     "max_val": date.today().year,
+                     "step": 1},
+        "YearRemodAdd": {"min_val": int(df["YearRemodAdd"].min() * percentageMin),
+                        "max_val": date.today().year,
+                        "step": 1}
+    }
+    
+    for idx, feature in enumerate(house_features):
+        col = cols[idx % len(cols)]
+        params = feature_params.get(feature,
+                                  {"min_val": int(df[feature].min()),
+                                   "max_val": int(df[feature].max()),
+                                   "step": 1})
+        
+        with col:
+            st_widget = st.number_input(
+                label=feature,
+                min_value=params["min_val"],
+                max_value=params["max_val"],
+                value=int(df[feature].median()),
+                step=params["step"],
+                key=f"{feature}_input"
+            )
+            X_live[feature] = st_widget
+            
     return X_live
