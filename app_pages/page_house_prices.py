@@ -21,25 +21,35 @@ def page_house_prices_body():
     # Load model once
     regression_pipe = load_model()
     
+    # Get inherited houses data
     X_inherited = load_inherited_houses_data()
+
+    # List of important features for house price prediction
     house_features = ["1stFlrSF", "BsmtFinSF1", "GarageArea", "GarageYrBlt",
                      "GrLivArea", "LotArea", "OverallQual",
                      "TotalBsmtSF", "YearBuilt", "YearRemodAdd"]
     
+    # Filter the inherited houses dataset to only include important features
     X_inherited_filtered = X_inherited[house_features]
+
+    # Display the dataset with the important features
     st.write("#### Inherited Houses (Filtered Data for Prediction)")
     st.write(X_inherited_filtered)
     
+     # Calculate predictions for inherited houses
     predicted_prices = predict_price(X_inherited_filtered, house_features, regression_pipe)
     X_inherited['PredictedSalePrice'] = predicted_prices
     
+    # Display the inherited houses data with predicted prices
     total_price = X_inherited['PredictedSalePrice'].sum()
     st.write(f"### Total Predicted Sale Price for the Inherited Houses:")
     st.write(f"**💲{round(total_price, 2):,}**")
     
+    # Get customers house inputs
     st.write("#### Predict Sales Price for Your Own House")
     X_live = DrawInputsWidgets(house_features)
     
+    # Predict price for customers house
     if st.button('Calculate the House Price'):
         try:
             predicted_price = predict_price(X_live, house_features, regression_pipe)[0]
@@ -54,8 +64,11 @@ def DrawInputsWidgets(house_features):
     percentageMin, percentageMax = 0.3, 2.2
     
     X_live = pd.DataFrame([], index=[0])
+
+    # Create columns one time
     cols = st.columns(10)
     
+    # Dictionary mapping features to their specific parameters
     feature_params = {
         "OverallQual": {"min_val": 1, "max_val": 10, "step": 1},
         "YearBuilt": {"min_val": int(df["YearBuilt"].min() * percentageMin),
@@ -66,6 +79,7 @@ def DrawInputsWidgets(house_features):
                         "step": 1}
     }
     
+    # Create widgets that has unique keys
     for idx, feature in enumerate(house_features):
         col = cols[idx % len(cols)]
         params = feature_params.get(feature,
