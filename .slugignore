@@ -1,13 +1,3 @@
 *.ipynb
 *.md
-*.psd
-*.pdf
-/test
-/spec
-*.sh
-.git/
-.github/
-.vscode/
-.env
-tests/
-coverage/
+
