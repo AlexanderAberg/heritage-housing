@@ -10,12 +10,6 @@ https://github.com/AlexanderAberg/heritage-housing-ames-iowa-usa/blob/main/READM
 
 <img src="assets/images/amiresponsive.png" alt='Responsive Screens'>
 
-
-## Cloud IDE Reminders
-
-To log into the Heroku toolbelt CLI:
-
-
 ## Dataset Content
 
 * The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
