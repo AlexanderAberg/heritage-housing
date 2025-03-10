@@ -117,7 +117,7 @@ https://github.com/Profess0ro
 
 ### Content
 
-- The content is based on the Code Institutes Walkthrough project and most
+- The content is based on the Code Institute's Walkthrough project and most
  of the learning has been taken from their learning material.
 
 ### Media
