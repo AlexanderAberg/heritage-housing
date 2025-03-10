@@ -2,18 +2,18 @@
 
 ## Introduction
 
-The project is aiming to apply Machine Learning and regression algorithms to accurately predict house prices in Ames, Iowa. 
-Our customer need to predict the prices for her 4 inherited houses and in this project we will give her a total sum for the houses and a model to calculate one house that will also be possible to use for you, the model will have a value to make it easy to understand how to put in own values
-The deployed project can be found here: https://heritage-housing.onrender.com/
-The README that you currently are reading can be found here: 
+- The project is aiming to apply Machine Learning and regression algorithms to accurately predict house prices in Ames, Iowa. 
+- Our customer need to predict the prices for her 4 inherited houses and in this project we will give her a total sum for the houses and a model to calculate one house that will also be possible to use for you, the model will have a value to make it easy to understand how to put in own values
+- The deployed project can be found here: https://heritage-housing.onrender.com/
+- The README that you currently are reading can be found here: 
 https://github.com/AlexanderAberg/heritage-housing-ames-iowa-usa/blob/main/README.md
 
 <img src="assets/images/amiresponsive.png" alt='Responsive Screens'>
 
 ## Dataset Content
 
-The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
-The dataset has almost 1.5 thousand rows and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
+- The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
+- The dataset has almost 1.5 thousand rows and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
 
 |Variable|Meaning|Units|
 |:----|:----|:----|
@@ -42,7 +42,7 @@ The dataset has almost 1.5 thousand rows and represents housing records from Ame
 |YearRemodAdd|Remodel date (same as construction date if no remodelling or additions)|1950 - 2010|
 |SalePrice|Sale Price|34900 - 755000|
 
-We deleted BsmtExposure, BsmtFinType1, GarageFinish, KitchenQual, LotFrontage, 
+- We deleted BsmtExposure, BsmtFinType1, GarageFinish, KitchenQual, LotFrontage, 
 EnclosedPorch and WoodDeckSF because the quality wasn't good enough.
 
 ## Business Requirements
@@ -52,20 +52,20 @@ EnclosedPorch and WoodDeckSF because the quality wasn't good enough.
 
 ## Hypothesis and how to validate?
 
-We believe that the size of the house and its features affect the SalePrice. We notice that it does, but it is not the most important feature, because quality has a higher effect and YearBuilt has a bigger importance than a few size related features.
+- We believe that the size of the house and its features affect the SalePrice. We notice that it does, but it is not the most important feature, because quality has a higher effect and YearBuilt has a bigger importance than a few size related features.
 
-Our conclusion is that you have to take care of your to get a good SalePrice. This means that a big house with a big garage, porch, yard etc. will get a very high SalePrice if you are also keeping the house in great condition.
+- Our conclusion is that you have to take care of your to get a good SalePrice. This means that a big house with a big garage, porch, yard etc. will get a very high SalePrice if you are also keeping the house in great condition.
 
-We think that one of the reasons YearBuilt has a big effect because a new house is often in better condition, that can also be a reason why a house from 1940 has about the same SalePrice as one from 1960. The YearRemodAdd also has a decently high correlation, but much less because a variety of the quality of the house work, while a new house has to a big degree professionals building the house.
+- We think that one of the reasons YearBuilt has a big effect because a new house is often in better condition, that can also be a reason why a house from 1940 has about the same SalePrice as one from 1960. The YearRemodAdd also has a decently high correlation, but much less because a variety of the quality of the house work, while a new house has to a big degree professionals building the house.
 
 ## Technologies Used
-Education Tool- From the people at Code Institute.
-The project - The base used from Code Institute.
-Mockup - Generated at amiresponsive
-GitHub for storing the project and deploying it
-GitHub CodeSpaces for project development
-Render for deploying the app.
-Kaggle for the dataset.
+- Education Tool- From the people at Code Institute.
+- The project - The base used from Code Institute.
+- Mockup - Generated at amiresponsive
+- GitHub for storing the project and deploying it
+- GitHub CodeSpaces for project development
+- Render for deploying the app.
+- Kaggle for the dataset.
 
 ## Images on data, graphs, plots etc.
 <img src="docs/plots/box_plot_price_by_OverallQual.png" alt='Overall Qual'>
@@ -89,8 +89,8 @@ Kaggle for the dataset.
 
 
 ## Future
-In the future I need to improve this README.
-The graphic needs to be fixed where you write in data of your own house. 
+- In the future I need to improve this README.
+- The graphic needs to be fixed where you write in data of your own house. 
 
 ## Deployment
 
@@ -105,31 +105,31 @@ The graphic needs to be fixed where you write in data of your own house.
 
 ## Main Data Analysis and Machine Learning Libraries
 
-Used pandas, matplotlib, ydata, numpy, seasborn, ppscore, sklearn, spearman and
+- Used pandas, matplotlib, ydata, numpy, seasborn, ppscore, sklearn, spearman and
 pearson for analysing and building the machine learning model.
 
 ## Credits
 
--Lino helped me much with tips, suggestion, to bounce ideas and bug fixes, you 
+- Lino helped me much with tips, suggestion, to bounce ideas and bug fixes, you 
 can find his GitHub here: https://github.com/linobollansee/
--Freddy helped me with the app pages and ideas,  his GitHub can be found here: 
+- Freddy helped me with the app pages and ideas,  his GitHub can be found here: 
 https://github.com/Profess0ro
 
 ### Content
 
-The content is taken from Code Institutes Walkthrough project and most of the 
+- The content is taken from Code Institutes Walkthrough project and most of the 
 learning has been taken from their learning material.
 
 ### Media
 
-Responsiveness - https://ui.dev/amiresponsive
+- Responsiveness - https://ui.dev/amiresponsive
 
 
 ## Acknowledgements (optional)
 
 
-I want to thank Lino again for all the help I got from him.
-Roman at Code Institute helped me by pointing out that I should use Render 
+- I want to thank Lino again for all the help I got from him.
+- Roman at Code Institute helped me by pointing out that I should use Render 
 instead of Heroku, because Heroku caused big issues for a long time because of 
 the size of slug being too large.
 
