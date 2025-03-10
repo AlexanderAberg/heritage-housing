@@ -12,8 +12,8 @@ https://github.com/AlexanderAberg/heritage-housing-ames-iowa-usa/blob/main/READM
 
 ## Dataset Content
 
-* The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
-* The dataset has almost 1.5 thousand rows and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
+The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
+The dataset has almost 1.5 thousand rows and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
 
 |Variable|Meaning|Units|
 |:----|:----|:----|
@@ -58,6 +58,15 @@ Our conclusion is that you have to take care of your to get a good SalePrice. Th
 
 We think that one of the reasons YearBuilt has a big effect because a new house is often in better condition, that can also be a reason why a house from 1940 has about the same SalePrice as one from 1960. The YearRemodAdd also has a decently high correlation, but much less because a variety of the quality of the house work, while a new house has to a big degree professionals building the house.
 
+## Technologies Used
+Education Tool- From the people at Code Institute.
+The project - The base used from Code Institute.
+Mockup - Generated at amiresponsive
+GitHub for storing the project and deploying it
+GitHub CodeSpaces for project development
+Render for deploying the app.
+Kaggle for the dataset.
+
 ## Images on data, graphs, plots etc.
 <img src="docs/plots/box_plot_price_by_OverallQual.png" alt='Overall Qual'>
 <img src="docs/plots/features_importance.png" alt='Features Importance'>
@@ -79,16 +88,15 @@ We think that one of the reasons YearBuilt has a big effect because a new house 
 <img src="docs/plots/regression_performance.png" alt='Regression Performance'>
 
 
-Conduct a correlation study using Pearson and Spearma
-## Unfixed Bugs
-
+## Future
+In the future I need to improve this README.
 The graphic needs to be fixed where you write in data of your own house. 
 
 ## Deployment
 
 ### The project is deployed on Render, with following steps:
 
-1. Log in to Heroku and create an App
+1. Log in to Render and create an App
 2. At the Deploy tab, select GitHub as the deployment method.
 3. Select your repository name and click Search. Once it is found, click Connect.
 4. Choose the port and Python version in  “Add Environment Variable”.
@@ -121,4 +129,7 @@ Responsiveness - https://ui.dev/amiresponsive
 
 
 I want to thank Lino again for all the help I got from him.
+Roman at Code Institute helped me by pointing out that I should use Render 
+instead of Heroku, because Heroku caused big issues for a long time because of 
+the size of slug being too large.
 
