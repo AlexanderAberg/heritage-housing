@@ -47,8 +47,8 @@ EnclosedPorch and WoodDeckSF because the quality wasn't good enough.
 
 ## Business Requirements
 
-1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
-2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
+- 1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
+- 2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
 
 ## Hypothesis and how to validate?
 
