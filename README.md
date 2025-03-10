@@ -111,7 +111,7 @@ pearson for analysing and building the machine learning model.
 ## Credits
 
 - Lino helped me much with tips, suggestion, to bounce ideas and bug fixes, 
-the help included going through my notebooks and app pages, 
+the help included going through my notebooks, app pages, and his graphs as base,
 you can find his GitHub here: https://github.com/linobollansee/ 
 and his project here: https://github.com/linobollansee/property-value-maximize
 - Freddy helped me with the app pages and ideas,  his GitHub can be found here: 
