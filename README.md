@@ -64,8 +64,25 @@ Our conclusion is that you have to take care of your to get a good SalePrice. Th
 
 We think that one of the reasons YearBuilt has a big effect because a new house is often in better condition, that can also be a reason why a house from 1940 has about the same SalePrice as one from 1960. The YearRemodAdd also has a decently high correlation, but much less because a variety of the quality of the house work, while a new house has to a big degree professionals building the house.
 
-## The rationale to map the business requirements to the Data Visualisations and ML tasks
-
+## Images on data, graphs, plots etc.
+<img src="docs/plots/box_plot_price_by_OverallQual.png" alt='Overall Qual'>
+<img src="docs/plots/features_importance.png" alt='Features Importance'>
+<img src="docs/plots/heatmap_corr_pearson.png" alt='Pearson'>
+<img src="docs/plots/heatmap_corr_spearman.png" alt='Spearman'>
+<img src="docs/plots/heatmap_pps.png" alt='Heatmap PPS'>
+<img src="docs/plots/hist_plot_SalePrice.png" alt='SalesPrice'>
+<img src="docs/plots/line_plot_price_by_GarageYrBlt.png" alt='GarageYrBlt'>
+<img src="docs/plots/line_plot_price_by_YearBuilt.png" alt='YearBuilt'>
+<img src="docs/plots/line_plot_price_by_YearRemodAdd.png" alt='YearRemodAdd'>
+<img src="docs/plots/lm_plot_price_by_1stFlrSF.png" alt='1stFlrSF'>
+<img src="docs/plots/lm_plot_price_by_BsmtFinSF1.png" alt='BsmtFinSF1'>
+<img src="docs/plots/lm_plot_price_by_GarageArea.png" alt='GarageArea'>
+<img src="docs/plots/lm_plot_price_by_GrLivArea.png" alt='GrLivArea'>
+<img src="docs/plots/lm_plot_price_by_LotArea.png" alt='LotArea'>
+<img src="docs/plots/lm_plot_price_by_MasVnrArea.png" alt='MasVnrArea'>
+<img src="docs/plots/lm_plot_price_by_OpenPorchSF.png" alt='OpenPorchSF'>
+<img src="docs/plots/lm_plot_price_by_TotalBsmtSF.png" alt='Total BsmtSF'>
+<img src="docs/plots/regression_performance.png" alt='Regression Performance'>
 
 
 Conduct a correlation study using Pearson and Spearma
